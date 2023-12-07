@@ -1,4 +1,12 @@
-django
+# Core
+django==4.1.12
+python-dotenv==1.0.0
+
 djangorestframework
 django-cors-headers
+
+# Deployment
+whitenoise==6.5.0
+gunicorn==21.2.0
+
 psycopg2
