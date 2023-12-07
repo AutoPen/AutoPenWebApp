@@ -1,0 +1,53 @@
+name: CI/CD
+
+on:
+  push: 
+    branches:
+      - develop
+
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Image version'
+        required: true
+
+env: 
+  REGISTRY: "autopen-container-registry"
+  IMAGE_NAME: "autopen_app"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+
+      - name: Setup TAG
+        shell: bash
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/develop" ]; then
+            echo "TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
+          else
+            echo "TAG=latest" >> $GITHUB_ENV
+          fi
+
+      - name: Build app into Docker image
+        run: docker build -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.TAG}} .
+
+      - name: Tag image
+        run: docker tag  ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.TAG}} registry.digitalocean.com/${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.TAG }}
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Log in to DO Container Registry
+        run: doctl registry login --expiry-seconds 600
+
+      - name: Remove all old images
+        run: if [ ! -z $(doctl registry repository list-tags $IMAGE_NAME --format Tag)  ]; then doctl registry repository delete-manifest $(echo $IMAGE_NAME) $(doctl registry repository list-tags $(echo $IMAGE_NAME) | grep -v -E "(latest)") --force; else echo "No repository"; fi
+        
+
+      - name: Push image to DO Container Registry
+        run: docker push registry.digitalocean.com/${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.TAG }}
