@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-6bxnhg6mf#v50jtciu1w$#3fs&cee8c@d&=z8pukbyr6ia6#bv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
 # These lines of code will add the rest_framework, corsheaders, 
 # and myapi apps to the INSTALLED_APPS list, add the CorsMiddleware to the MIDDLEWARE list, and allow all origins to make cross-origin requests.
