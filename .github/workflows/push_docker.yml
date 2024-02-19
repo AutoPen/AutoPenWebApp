@@ -13,7 +13,7 @@ on:
 
 env: 
   REGISTRY: "autopen-container-registry"
-  IMAGE_NAME: "autopen_app"
+  IMAGE_NAME: "autopen_app2"
 
 jobs:
   build:
