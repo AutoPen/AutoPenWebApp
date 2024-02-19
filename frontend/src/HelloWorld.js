@@ -5,7 +5,7 @@ function HelloWorld() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/hello-world')
+    axios.get('http://localhost:8000/api/hello-world/')
       .then(response => {
         setMessage(response.data.message);
       })
@@ -16,7 +16,9 @@ function HelloWorld() {
 
   return (
     <div>
-      <h1>Hello Mama</h1>
+      <h1>This code defines a new React component called HelloWorld that makes an 
+          HTTP GET request to the hello-world API endpoint we defined earlier. 
+          The response data is stored in the message state, which is displayed on the web page below.</h1>
       <p>{message}</p>
     </div>
   );
