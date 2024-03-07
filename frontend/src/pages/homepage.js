@@ -5,22 +5,7 @@ import { Container, Typography, AppBar, Toolbar, Button, Box } from '@mui/materi
 const HomePage = () => {
   return (
     <>
-      <AppBar position="static" sx={{ background: 'linear-gradient(to right, #000000, #6A1B9A)', color: '#fff' }}>
-        <Toolbar>
-          {/* Logo */}
-          <img src="AutoPenLogo.png" alt="AutoPen Logo" style={{ marginRight: '10px', width: '100px', height: '100px' }} />
-
-          {/* AutoPen Title */}
-          <Typography variant="h1" component="div" sx={{ flexGrow: 1, textAlign: 'left', fontWeight: 'bold' }}>
-            AutoPen
-          </Typography>
-
-          {/* Navigation Buttons */}
-          <Button color="inherit" sx={{ fontWeight: 'bold' }}>About</Button>
-          <Button color="inherit" sx={{ fontWeight: 'bold' }}>Contact</Button>
-        </Toolbar>
-      </AppBar>
-
+    
       <Box component="section" id="features" sx={{ py: 6 }}>
         <Container maxWidth="md" sx={{ textAlign: 'center' }}>
           <Typography variant="h2" gutterBottom>
@@ -69,7 +54,7 @@ const HomePage = () => {
           <Typography variant="body1" paragraph>
             If you have any questions or inquiries, please feel free to contact our team.
           </Typography>
-          <Button variant="contained" color="primary" href="contact.html">
+          <Button variant="contained" color="primary" href="./Contact">
             Contact Us
           </Button>
         </Container>
@@ -87,3 +72,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+

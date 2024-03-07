@@ -1,0 +1,82 @@
+/* login.css */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Grey background */
+  }
+  
+  .login-window {
+    background-color: purple; /* Change to purple background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .autopen-logo {
+    display: block;
+    margin: 0 auto 20px; /* Center the logo */
+    max-width: 90px;
+    height: auto;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 5px;
+  }
+  
+  /* Add the following styles to apply the dashboard styles to the login page */
+  .dashboard {
+    background-color: purple;
+    padding: 10px 0;
+  }
+  
+  .dashboard .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .dashboard h1 {
+    color: white;
+  }
+  
+  .dashboard-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dashboard-links li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .dashboard-links li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .dashboard-links li a:hover {
+    text-decoration: underline;
+  }
+  
+  .login-button {
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .login-button:hover {
+    background-color: white;
+    color: purple;
+  }
+  .userpage-container {
+    background-color: #f0f0f0; /* Grey background color */
+  }
+  
