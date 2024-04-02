@@ -1,8 +1,22 @@
 import React from 'react';
+import { Container, Typography, AppBar, Toolbar, Button, Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import './pageStyles/PricingPlans.css'; 
 
 function PricingPlans() {
+  const navigate = useNavigate(); // Initialize navigate for redirection
+
   return (
+    <>
+    <AppBar position="static" color="default" elevation={1}>
+            <Toolbar>
+              <Box sx={{ flexGrow: 1 }} /> {/* This Box pushes everything after it to the right */}
+              <Button color="inherit" onClick={() => navigate('/login')}>
+                Login
+              </Button>
+            </Toolbar>
+          </AppBar>
+
     <div className="pricing-container">
       <h1>Our Pricing Plans</h1>
       <div className="plans">
@@ -27,6 +41,7 @@ function PricingPlans() {
       </div>
       <p className="note">*Weekly limit applies</p>
     </div>
+    </>
   );
 }
 

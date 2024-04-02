@@ -6,7 +6,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import routes from './routes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import UserDashboard from './pages/UserDashboard';
 
 const theme = createTheme({
   palette: {
@@ -21,17 +21,22 @@ function App() {
   return (
     <>
 
-      <Router>
+
+  
+
+    <Router>
       <Navbar />
       <div >
         <Routes>
           {routes.map((route, index) => (
             <Route key={index} path={route.path} element={route.component} />
           ))}
+          
         </Routes>
       </div>
     </Router>
 
+    
   
       
       </>

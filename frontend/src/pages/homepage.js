@@ -1,11 +1,21 @@
-// src/components/HomePage.js
 import React from 'react';
 import { Container, Typography, AppBar, Toolbar, Button, Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
+  const navigate = useNavigate(); // Initialize navigate
+
   return (
     <>
-    
+      <AppBar position="static" color="default" elevation={1}>
+        <Toolbar>
+          <Box sx={{ flexGrow: 1 }} /> {/* This Box pushes everything after it to the right */}
+          <Button color="inherit" onClick={() => navigate('/login')}>
+            Login
+          </Button>
+        </Toolbar>
+      </AppBar>
+
       <Box component="section" id="features" sx={{ py: 6 }}>
         <Container maxWidth="md" sx={{ textAlign: 'center' }}>
           <Typography variant="h2" gutterBottom>
@@ -41,7 +51,7 @@ const HomePage = () => {
             About Us
           </Typography>
           <Typography variant="body1">
-            AutoPen is a leading provider of AI-powered penetration testing solutions, dedicated to helping businesses secure their digital assets.
+            AutoPen is a leading provider of automated penetration testing solutions, dedicated to helping businesses secure their digital assets.
           </Typography>
         </Container>
       </Box>
@@ -72,5 +82,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-

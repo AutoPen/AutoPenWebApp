@@ -1,8 +1,22 @@
 import React from 'react';
+import { Container, Typography, AppBar, Toolbar, Button, Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import './pageStyles/AboutUs.css';
 
 const About = () => {
+
+	const navigate = useNavigate(); // Initialize navigate for redirection
   return (
+		<>
+		<AppBar position="static" color="default" elevation={1}>
+            <Toolbar>
+              <Box sx={{ flexGrow: 1 }} /> {/* This Box pushes everything after it to the right */}
+              <Button color="inherit" onClick={() => navigate('/login')}>
+                Login
+              </Button>
+            </Toolbar>
+          </AppBar>
+
     <div className="about-container">
       <img src="AutoPenLogo.png" alt="AutoPen Logo" className="logo"/>
       <div className="content">
@@ -37,6 +51,7 @@ const About = () => {
         </div>
       </div>
     </div>
+	</>
   );
 };
 

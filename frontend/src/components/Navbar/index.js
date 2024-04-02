@@ -3,6 +3,8 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
+
+
 const NavBar = () => {
   return (
     <Navbar expand="lg" className={styles.navbar}>
@@ -25,9 +27,6 @@ const NavBar = () => {
             </Nav.Link>
             <Nav.Link as={NavLink} to="/FAQ" className={styles.navLink}>
               FAQ
-            </Nav.Link>
-            <Nav.Link as={NavLink} to="/FAQPage" className={styles.navLink}>
-              FAQPage
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

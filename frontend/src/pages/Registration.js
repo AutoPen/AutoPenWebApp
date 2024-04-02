@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import autopenIcon from './images/autopen-icon.png';
-import './login.css'; // Import CSS file for styling
+import './pageStyles/registration.css'; // This assumes the path is correct based on your description
+import autopenIcon from '../pages/autopen-icon.png'; // Adjusted path for the image
 
 function Registration() {
   const navigate = useNavigate();
@@ -10,18 +10,14 @@ function Registration() {
 
   const handleRegistration = (e) => {
     e.preventDefault();
-    // You can implement your registration logic here
-    // For simplicity, we'll just display the entered username and password
     alert(`Registered with Username: ${username}, Password: ${password}`);
-    
-    // Redirect to the Login page after successful registration
-    navigate('/login');
+    navigate('/login'); // Redirect to the Login page after successful registration
   };
 
   return (
-    <div className="login-container"> {/* Reuse the login-container class */}
-      <div className="login-window"> {/* Reuse the login-window class */}
-        <img src={autopenIcon} alt="AutoPen Icon" className="autopen-logo" />
+    <div className="login-container">
+      <div className="login-window">
+      <img src={autopenIcon} alt="AutoPen Icon" className="registration-logo" />
         <h2>Registration</h2>
         <form onSubmit={handleRegistration}>
           <div>
