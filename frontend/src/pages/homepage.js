@@ -1,23 +1,18 @@
-// src/components/HomePage.js
 import React from 'react';
 import { Container, Typography, AppBar, Toolbar, Button, Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
+  const navigate = useNavigate(); // Initialize navigate
+
   return (
     <>
-      <AppBar position="static" sx={{ background: 'linear-gradient(to right, #000000, #6A1B9A)', color: '#fff' }}>
+      <AppBar position="static" color="default" elevation={1}>
         <Toolbar>
-          {/* Logo */}
-          <img src="AutoPenLogo.png" alt="AutoPen Logo" style={{ marginRight: '10px', width: '100px', height: '100px' }} />
-
-          {/* AutoPen Title */}
-          <Typography variant="h1" component="div" sx={{ flexGrow: 1, textAlign: 'left', fontWeight: 'bold' }}>
-            AutoPen
-          </Typography>
-
-          {/* Navigation Buttons */}
-          <Button color="inherit" sx={{ fontWeight: 'bold' }}>About</Button>
-          <Button color="inherit" sx={{ fontWeight: 'bold' }}>Contact</Button>
+          <Box sx={{ flexGrow: 1 }} /> {/* This Box pushes everything after it to the right */}
+          <Button color="inherit" onClick={() => navigate('/login')}>
+            Login
+          </Button>
         </Toolbar>
       </AppBar>
 
@@ -56,7 +51,7 @@ const HomePage = () => {
             About Us
           </Typography>
           <Typography variant="body1">
-            AutoPen is a leading provider of AI-powered penetration testing solutions, dedicated to helping businesses secure their digital assets.
+            AutoPen is a leading provider of automated penetration testing solutions, dedicated to helping businesses secure their digital assets.
           </Typography>
         </Container>
       </Box>
@@ -69,7 +64,7 @@ const HomePage = () => {
           <Typography variant="body1" paragraph>
             If you have any questions or inquiries, please feel free to contact our team.
           </Typography>
-          <Button variant="contained" color="primary" href="contact.html">
+          <Button variant="contained" color="primary" href="./Contact">
             Contact Us
           </Button>
         </Container>

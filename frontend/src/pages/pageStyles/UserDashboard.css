@@ -1,0 +1,41 @@
+/* userdashboard.css */
+
+.user-dashboard-container {
+    padding: 20px;
+    text-align: center; /* Center-aligns the content */
+    max-width: 600px; /* Adjust based on your design */
+    margin: auto; /* Center the container */
+    background-color: #f0f0f0; /* Light background for the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+  
+  .dashboard-links {
+    background-color: #000000; /* Purple background for the link section */
+    padding: 20px; /* Spacing inside the link section */
+    color: white; /* Text color for contrast */
+    margin-top: 20px; /* Space above the link section */
+    border-radius: 5px; /* Rounded corners for the link section */
+  }
+  
+  .dashboard-links a { /* Styles for links */
+    background-color: white; /* White background for buttons */
+    color: black; /* Black text color */
+    padding: 10px 20px; /* Padding for size */
+    margin: 10px; /* Space between buttons */
+    display: inline-block; /* Align buttons inline */
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners for buttons */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Shadow for buttons */
+  }
+  
+  .dashboard-links a:hover { /* Hover effect for buttons */
+    background-color: #eee; /* Lighter background on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Larger shadow on hover */
+  }
+  
+  .autopen-logo { /* Logo specific styles */
+    max-width: 90px; /* Restrict logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below the logo */
+  }

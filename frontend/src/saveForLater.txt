@@ -1,0 +1,16 @@
+From homepage.js 
+        <AppBar position="static" sx={{ background: 'linear-gradient(to right, #000000, #6A1B9A)', color: '#fff' }}>
+        <Toolbar>
+        {/* Logo */}
+        <img src="AutoPenLogo.png" alt="AutoPen Logo" style={{ marginRight: '10px', width: '100px', height: '100px' }} />
+
+        {/* AutoPen Title */}
+        <Typography variant="h1" component="div" sx={{ flexGrow: 1, textAlign: 'left', fontWeight: 'bold' }}>
+            AutoPen
+        </Typography>
+
+        {/* Navigation Buttons */}
+        <Button color="inherit" sx={{ fontWeight: 'bold' }}>About</Button>
+        <Button color="inherit" sx={{ fontWeight: 'bold' }}>Contact</Button>
+        </Toolbar>
+        </AppBar>
